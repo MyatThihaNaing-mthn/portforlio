@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import { useInView } from "react-intersection-observer";
 import HeroAnimation from "./HeroAnimation";
+import Navbar from "./NavBar";
 
 function useSectionVisibility(){
     const [activeSection, setActiveSection] = useState('hero');
@@ -47,14 +47,15 @@ export default function IntroPage() {
     };
 
     return (
-        <div className=" flex flex-col items-center justify-center">
+        <div className=" main flex flex-col items-center justify-center">
             {isSVGVisible ? (
                 <HeroAnimation onAnimationComplete={handleSVGAnimationComplete} />
             ) : (
-                <>
+                <main>
+                    <Navbar/>
                     <HeroSection ref={heroRef} isActive={activeSection === 'hero'}/>
                     <AboutSection ref={aboutRef} isActive={activeSection === 'about'}/>
-                </>
+                </main>
             )}
         </div>
     )

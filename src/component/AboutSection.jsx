@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import profileImg from '../assets/me.png';
 
 const AboutSection = React.forwardRef(({ isActive }, ref) => {
     const contentVariants = {
@@ -8,13 +9,42 @@ const AboutSection = React.forwardRef(({ isActive }, ref) => {
     };
 
     return (
-        <section className=" about min-h-screen flex items-center justify-center"
+        <section className=" about min-h-screen max-w-about-max flex items-start justify-center
+                 mx-auto my-0"
             ref={ref}>
             <motion.div
                 variants={contentVariants}
                 initial="hidden"
-                animate={isActive? "visible" : "hidden"}>
-                <h1>This is about section</h1>
+                animate={isActive ? "visible" : "hidden"}>
+                <h2 className=" section-heading text-lightest-slate">About Me</h2>
+                <div className=" inner">
+                    <div className=" about-me-txt block">
+                        <div>
+                            <p>
+                                Hello! My name is Brittany and I enjoy creating things that live on the internet.
+                                My interest in web development started back in 2012 when I decided to try editing custom
+                                Tumblr themes — turns out hacking together a custom reblog button taught me a
+                                lot about HTML & CSS!
+                            </p>
+                            <p>
+                                Fast-forward to today, and I’ve had the privilege of working at an advertising agency,
+                                a start-up, a huge corporation, and a student-led design studio. My main focus these days is
+                                building accessible, inclusive products and digital experiences at Upstatement for a variety
+                                of clients.
+                            </p>
+                            <p>
+                                I also recently launched a course that covers everything you need to build a web app with the Spotify
+                                API using Node & React.
+                            </p>
+                            <p>Here are a few technologies I’ve been working with recently:</p>
+                        </div>
+                    </div>
+                    <div className=" about-me-img">
+                        <div className=" img-wrapper">
+                            <img src={profileImg} className=" about-img w-full"/>
+                        </div>
+                    </div>
+                </div>
             </motion.div>
         </section>
     )
