@@ -23,7 +23,10 @@ export default {
       },
       fontSize: {
         'greeting' : 'clamp( 14px, 5vw, 16px )'
-      }
+      },
+      backgroundColor: {
+        'main-bg-color' : '#0a192f',
+      },
     },
   },
   plugins: [],

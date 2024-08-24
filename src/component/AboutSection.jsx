@@ -1,12 +1,22 @@
-import { motion } from "framer-motion";
-import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import profileImg from '../assets/me.png';
 
 const AboutSection = React.forwardRef(({ isActive }, ref) => {
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const controls = useAnimation();
+
     const contentVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.2 } },
     };
+
+    useEffect(() => {
+        if (isActive && !hasAnimated) {
+            controls.start('visible')
+            setHasAnimated(true)
+        }
+    }, [isActive, hasAnimated, controls])
 
     return (
         <section className=" about min-h-screen max-w-about-max flex items-start justify-center
@@ -15,13 +25,13 @@ const AboutSection = React.forwardRef(({ isActive }, ref) => {
             <motion.div
                 variants={contentVariants}
                 initial="hidden"
-                animate={isActive ? "visible" : "hidden"}>
+                animate={controls}>
                 <h2 className=" section-heading text-lightest-slate">About Me</h2>
                 <div className=" inner">
                     <div className=" about-me-txt block">
                         <div>
                             <p>
-                                Hello! My name is Brittany and I enjoy creating things that live on the internet.
+                                Hello! My name is Myat Thiha Naing and I enjoy creating things that live on the internet.
                                 My interest in web development started back in 2012 when I decided to try editing custom
                                 Tumblr themes — turns out hacking together a custom reblog button taught me a
                                 lot about HTML & CSS!
@@ -38,10 +48,18 @@ const AboutSection = React.forwardRef(({ isActive }, ref) => {
                             </p>
                             <p>Here are a few technologies I’ve been working with recently:</p>
                         </div>
+                        <ul className="skills-list">
+                            <li>Spring-boot</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>Docker</li>
+                            <li>ASP.NET</li>
+                            <li>Javascript</li>
+                        </ul>
                     </div>
                     <div className=" about-me-img">
                         <div className=" img-wrapper">
-                            <img src={profileImg} className=" about-img w-full"/>
+                            <img src={profileImg} className=" about-img w-full" />
                         </div>
                     </div>
                 </div>

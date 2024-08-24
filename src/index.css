@@ -5,7 +5,10 @@
 :root{
   --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-  --slate: #8892b0
+  --slate: #8892b0;
+  --fz-sm: 14px;
+  --fz-xs: 13px;
+  --green: #64ffda;
 }
 
 * {
@@ -91,6 +94,10 @@ div {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+.navbar-shadow {
+  box-shadow: 0 4px 2px -2px rgba(2,12,27,0.7); 
 }
 
 .big-heading {
@@ -183,4 +190,42 @@ div {
 
 .about-img{
   aspect-ratio: 1 / 1;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+ul.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  list-style: none;
+}
+
+ul.skills-list li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+}
+
+ul.skills-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0px;
+  color: var(--green);
+  font-size: var(--fz-sm);
+  line-height: 12px;
 }

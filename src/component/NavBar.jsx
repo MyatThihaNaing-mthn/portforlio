@@ -49,8 +49,8 @@ const Navbar = () => {
     return (
         <header>
             <nav
-            className={`fixed top-0 py-4 left-0 w-full transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-full'
-                }`}
+            className={`fixed top-0 py-4 bg-main-bg-color navbar-shadow z-50 left-0 
+                w-full transition-transform duration-500 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
