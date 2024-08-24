@@ -1,0 +1,37 @@
+{
+    "exprience": [
+        {
+            "title": "Moblie Security Engineer",
+            "company": "V-Key",
+            "website": "https://www.v-key.com/",
+            "time": "May 2018 - Present",
+            "workDetails": [
+                "Leveraged Android SDK and NDK to enhance existing security features, discovering new techniques and documenting findings on Confluence.",
+                "Designed and implemented mobile security features based on research findings.Authored detailed documentation and instructions for the testing team and presented these features to clientsduring meetings",
+                "Addressed customer reports on false positives and false negatives in malware detection. Reproduced reported issues, investigated root causes, and used Android SDK and NDK to resolve bugs, making necessary redesigns."
+            ]
+        },
+        {
+            "title": "Business Manager",
+            "company": "TH",
+            "website": null,
+            "time": "May 2018 - Present",
+            "workDetails": [
+                " Collaborated with rice grain suppliers to ensure a consistent and high-quality supply, negotiating terms and maintaining strong relationships.",
+                "Oversaw the inventory of rice products, ensuring accurate tracking, efficient stock levels, and timely replenishment to meet production and sales demands.",
+                "Supervised and coordinated a team of workers, managing schedules, delegating tasks, and ensuring productivity and compliance with safety standards.",
+                "engaged in sales and marketing activities, promoting products, developing sales strategies, and expanding the customer base to increase revenue."
+            ]
+        },
+        {
+            "title": "IoT Engineer",
+            "company": "Arbiter Myanmar",
+            "website": null,
+            "time": "May 2018 - Present",
+            "workDetails": [
+                "Designed and implemented joystick controlled wheelchair",
+                "Modified a manual wheelchair into electric wheelchair using DC-motors, joystick controllers, motor drivers and arduino contollers"
+            ]
+        }
+    ]
+}

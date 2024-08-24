@@ -1,6 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import profileImg from '../assets/me.png';
+import PropTypes from 'prop-types';
 
 const AboutSection = React.forwardRef(({ isActive }, ref) => {
     const [hasAnimated, setHasAnimated] = useState(false);
@@ -8,7 +9,7 @@ const AboutSection = React.forwardRef(({ isActive }, ref) => {
 
     const contentVariants = {
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.2 } },
+        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
     };
 
     useEffect(() => {
@@ -19,7 +20,7 @@ const AboutSection = React.forwardRef(({ isActive }, ref) => {
     }, [isActive, hasAnimated, controls])
 
     return (
-        <section className=" about min-h-screen max-w-about-max flex items-start justify-center
+        <section className=" about  max-w-about-max flex items-start
                  mx-auto my-0"
             ref={ref}>
             <motion.div
@@ -69,4 +70,7 @@ const AboutSection = React.forwardRef(({ isActive }, ref) => {
 })
 
 AboutSection.displayName = "AboutSection"
+AboutSection.propTypes = {
+    isActive: PropTypes.bool.isRequired,
+};
 export default AboutSection

@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 const HeroSection = React.forwardRef(({ isActive }, ref) => {
     const [hasAnimated, setHasAnimated] = useState(false);
@@ -99,5 +100,8 @@ const HeroSection = React.forwardRef(({ isActive }, ref) => {
 });
 
 HeroSection.displayName = "HeroSection";
+HeroSection.propTypes = {
+    isActive : PropTypes.bool.isRequired
+}
 
 export default HeroSection;

@@ -4,6 +4,7 @@ import AboutSection from "./AboutSection";
 import { useInView } from "react-intersection-observer";
 import HeroAnimation from "./HeroAnimation";
 import Navbar from "./NavBar";
+import ExpSection from "./ExpSection";
 
 function useSectionVisibility(){
     const [activeSection, setActiveSection] = useState('hero');
@@ -14,25 +15,28 @@ function useSectionVisibility(){
     const [aboutRef, aboutInView] = useInView({
         threshold: 0.5,
     })
+    const [expRef, expInView] = useInView({
+        threshold: 0.5,
+    })
 
     useEffect(()=> {
         if (heroInView) setActiveSection('hero');
     else if (aboutInView) setActiveSection('about');
-    }, [heroInView, aboutInView])
+    else if (expInView) setActiveSection('experience')
+    }, [heroInView, aboutInView, expInView])
 
-    return {activeSection, heroRef, aboutRef}
+    return {activeSection, heroRef, aboutRef, expRef}
 }
 
 export default function IntroPage() {
     const [isSVGVisible, setSVGVisible] = useState(true)
 
-    const { activeSection, heroRef, aboutRef } = useSectionVisibility();
+    const { activeSection, heroRef, aboutRef, expRef } = useSectionVisibility();
 
     useEffect(() => {
         if (!isSVGVisible) {
             const timer = setTimeout(() => {
                 setSVGVisible(false)
-                console.log("chnage bg color")
                 document.body.style.backgroundColor = "#0a192f"
             }, 1000);
             return () => clearTimeout(timer);
@@ -55,6 +59,7 @@ export default function IntroPage() {
                     <Navbar/>
                     <HeroSection ref={heroRef} isActive={activeSection === 'hero'}/>
                     <AboutSection ref={aboutRef} isActive={activeSection === 'about'}/>
+                    <ExpSection ref={expRef} isActive={activeSection === 'experience'}/>
                 </main>
             )}
         </div>

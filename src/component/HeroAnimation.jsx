@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 export default function HeroAnimation({onAnimationComplete}){
     const svgVariants = {
@@ -35,9 +36,9 @@ export default function HeroAnimation({onAnimationComplete}){
                 >
                     <motion.path
                         fill="none"
-                        stroke="white"
+                        stroke="#64ffda"
                         strokeWidth="4"
-                        d="M 50 10 L 80 30 L 80 70 L 50 90 L 20 70 L 20 30 Z"
+                        d="M 50 10 L 78 30 L 78 70 L 50 90 L 22 70 L 22 30 Z"
                         variants={pathVariants}
                     />
                     <motion.text
@@ -47,7 +48,8 @@ export default function HeroAnimation({onAnimationComplete}){
                         textAnchor="middle"
                         dominantBaseline="middle"
                         fontSize="28"
-                        fill="white"
+                        fontWeight="bold"
+                        fill="#64ffda"
                         fontFamily="Arial"
                     >
                         M
@@ -56,3 +58,7 @@ export default function HeroAnimation({onAnimationComplete}){
         </div>
     )
 }
+
+HeroAnimation.propTypes = {
+    onAnimationComplete: PropTypes.func.isRequired
+};
