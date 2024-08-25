@@ -20,6 +20,7 @@ export default {
         'p-width' : '540px',
         'section-max' : '1000px',
         'about-max' : '900px',
+        'img-max' : '700px',
       },
       fontSize: {
         'greeting' : 'clamp( 14px, 5vw, 16px )'

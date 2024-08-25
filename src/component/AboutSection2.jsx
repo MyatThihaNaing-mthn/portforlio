@@ -1,14 +1,15 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation} from "framer-motion";
 import { useEffect, useState } from "react";
 import profileImg from '../assets/me.png';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useInView } from "react-intersection-observer";
 
-const AboutSection = () => {
+const AboutSection2 = () => {
     const [hasAnimated, setHasAnimated] = useState(false);
-    const [isActive, setIsActive] = useState(false);
-    const [aboutRef, aboutInView] = useInView({
-        threshold: 0.5
+    const [isActive, setActive] = useState(false);
+
+    const [about2Ref, about2InView] = useInView({
+        threshold : 0.5,
     });
 
     const controls = useAnimation();
@@ -18,10 +19,10 @@ const AboutSection = () => {
     };
 
     useEffect(() => {
-        if(aboutInView){
-            setIsActive(true)
+        if(about2InView){
+            setActive(true)
         }
-    }, [aboutInView])
+    }, [about2InView])
 
     useEffect(() => {
         if (isActive && !hasAnimated) {
@@ -34,7 +35,7 @@ const AboutSection = () => {
     return (
         <section className=" about  max-w-about-max flex items-start
                  mx-auto my-0"
-            ref={aboutRef}>
+            ref={about2Ref}>
             <motion.div
                 variants={contentVariants}
                 initial="hidden"
@@ -72,7 +73,7 @@ const AboutSection = () => {
                     </div>
                     <div className=" about-me-img">
                         <div className=" img-wrapper">
-                            <img src={profileImg} className=" about-img w-full" alt="profile image"/>
+                            <img src={profileImg} className=" about-img w-full" alt="profile" />
                         </div>
                     </div>
                 </div>
@@ -81,8 +82,8 @@ const AboutSection = () => {
     )
 }
 
-AboutSection.displayName = "AboutSection"
-// AboutSection.propTypes = {
-//     isActive: PropTypes.bool.isRequired,
-// };
-export default AboutSection
+AboutSection2.displayName = "AboutSection2"
+AboutSection2.propTypes = {
+    isActive: PropTypes.bool.isRequired,
+};
+export default AboutSection2

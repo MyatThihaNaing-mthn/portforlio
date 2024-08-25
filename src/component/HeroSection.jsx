@@ -1,11 +1,15 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
-const HeroSection = React.forwardRef(({ isActive }, ref) => {
+const HeroSection = () => {
     const [hasAnimated, setHasAnimated] = useState(false);
-    const controls = useAnimation();
+    const [isActive, setIsActive] = useState(false);
+    const [heroRef, heroInView] = useInView({
+        threshold: 0.5
+    });
 
+    const controls = useAnimation();
     const h1Variants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.2 } },
@@ -22,7 +26,6 @@ const HeroSection = React.forwardRef(({ isActive }, ref) => {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.8 } },
     };
-    //TODO make wave gesture
     const waveVariants = {
         animate: { 
             rotate: [0, -15, 15, -15, 0],
@@ -37,6 +40,12 @@ const HeroSection = React.forwardRef(({ isActive }, ref) => {
     };
 
     useEffect(()=> {
+        if(heroInView){
+            setIsActive(true);
+        }
+    }, [heroInView])
+
+    useEffect(()=> {
         if(isActive && !hasAnimated){
             controls.start('visible')
             setHasAnimated(true)
@@ -44,7 +53,7 @@ const HeroSection = React.forwardRef(({ isActive }, ref) => {
     },[hasAnimated, isActive, controls])
    
     return (
-        <section ref={ref} className="hero min-h-screen h-screen max-w-section-max p-0 flex flex-col mx-auto my-0 items-start justify-center">
+        <section ref={heroRef} className="hero min-h-screen h-screen max-w-section-max p-0 flex flex-col mx-auto my-0 items-start justify-center">
             <motion.div
                 variants={h1Variants}
                 initial="hidden"
@@ -97,11 +106,8 @@ const HeroSection = React.forwardRef(({ isActive }, ref) => {
 
         </section>
     );
-});
+}
 
 HeroSection.displayName = "HeroSection";
-HeroSection.propTypes = {
-    isActive : PropTypes.bool.isRequired
-}
 
 export default HeroSection;

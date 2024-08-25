@@ -115,7 +115,7 @@ const Navbar = ({onNavigation}) => {
     );
 };
 
-Navbar.PropTypes = {
+Navbar.propTypes = {
     onNavigation : PropTypes.func.isRequired
 }
 

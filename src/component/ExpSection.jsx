@@ -1,22 +1,16 @@
 import PropTypes from "prop-types";
 import ExpData from "../assets/content/experience.json";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-// const data1 = {
-//     "title" : "Moblie Security Engineer",
-//     "company" : "V-Key",
-//     "website" : "https://www.v-key.com/",
-//     "time" : "May 2018 - Present",
-//     "workDetails" : [
-//         "Leveraged Android SDK and NDK to enhance existing security features, discovering new techniques and documenting findings on Confluence.",
-//         "Designed and implemented mobile security features based on research findings.Authored detailed documentation and instructions for the testing team and presented these features to clientsduring meetings",
-//         "Addressed customer reports on false positives and false negatives in malware detection. Reproduced reported issues, investigated root causes, and used Android SDK and NDK to resolve bugs, making necessary redesigns.",
-//     ]
-// }
 
-const ExpSection = React.forwardRef(({ isActive }, ref) => {
+const ExpSection = () => {
     const [hasAnimated, setHasAnimated] = useState(false);
+    const [expRef, expInView] = useInView({
+        threshold : 0.5
+    })
+    const [isActive, setIsActive] = useState(false);
     const [currentTab, setCurrentTab] = useState(0);
 
     const controls = useAnimation();
@@ -32,6 +26,12 @@ const ExpSection = React.forwardRef(({ isActive }, ref) => {
     }
 
     useEffect(() => {
+        if(expInView){
+            setIsActive(true)
+        }
+    }, [expInView])
+
+    useEffect(() => {
         if (isActive && !hasAnimated) {
             controls.start('visible')
             setHasAnimated(true)
@@ -40,9 +40,9 @@ const ExpSection = React.forwardRef(({ isActive }, ref) => {
 
     return (
         <section
-            className="experience min-h-screen max-w-about-max flex flex-col items-start
+            className="experience max-w-about-max flex flex-col items-start
                  mx-auto my-0"
-            ref={ref}
+            ref={expRef}
         >
             <motion.div variants={contentVariants}
                 initial="hidden"
@@ -68,7 +68,7 @@ const ExpSection = React.forwardRef(({ isActive }, ref) => {
             </motion.div>
         </section>
     )
-})
+}
 
 function TabButton({ company, isActive, handleClick }) {
     return (
@@ -122,9 +122,6 @@ WorkDetailsItem.propTypes = {
 TabButton.propTypes = {
     company: PropTypes.string.isRequired,
     handleClick: PropTypes.func.isRequired,
-    isActive: PropTypes.bool.isRequired
-}
-ExpSection.propTypes = {
     isActive: PropTypes.bool.isRequired
 }
 
