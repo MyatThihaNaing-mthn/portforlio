@@ -3,10 +3,10 @@ import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import { useInView } from "react-intersection-observer";
 import HeroAnimation from "./HeroAnimation";
-import Navbar from "./NavBar";
 import ExpSection from "./ExpSection";
+import Navbar from "./NavBar";
 
-function useSectionVisibility(){
+function useSectionVisibility() {
     const [activeSection, setActiveSection] = useState('hero');
 
     const [heroRef, heroInView] = useInView({
@@ -19,19 +19,22 @@ function useSectionVisibility(){
         threshold: 0.5,
     })
 
-    useEffect(()=> {
+
+    useEffect(() => {
         if (heroInView) setActiveSection('hero');
-    else if (aboutInView) setActiveSection('about');
-    else if (expInView) setActiveSection('experience')
+        else if (aboutInView) setActiveSection('about');
+        else if (expInView) setActiveSection('experience');
     }, [heroInView, aboutInView, expInView])
 
-    return {activeSection, heroRef, aboutRef, expRef}
+    console.log("about ref "+ aboutRef)
+    return { activeSection, heroRef, aboutRef, expRef }
 }
 
 export default function IntroPage() {
     const [isSVGVisible, setSVGVisible] = useState(true)
 
     const { activeSection, heroRef, aboutRef, expRef } = useSectionVisibility();
+
 
     useEffect(() => {
         if (!isSVGVisible) {
@@ -50,16 +53,46 @@ export default function IntroPage() {
         }, 1000); // Duration to ensure complete SVG animation
     };
 
+    const scrollToSection = (ref) => {
+        console.log("Scrolling to section", ref); // Debug log
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.warn("Ref is not attached to an element yet"); // Debug warning
+        }
+    };
+
+    const handleNavigation = (section) => {
+        console.log("Navigating to", section);
+
+        switch (section) {
+            case 'about':
+                console.log(aboutRef)
+                scrollToSection(aboutRef)
+                break
+            case 'experience':
+                console.log(expRef)
+                scrollToSection(expRef)
+                break
+            case 'work':
+                console.log("work section")
+                break
+            case 'contact':
+                console.log("contact section")
+                break
+        }
+    }
+
     return (
         <div className=" main flex flex-col items-center justify-center">
             {isSVGVisible ? (
                 <HeroAnimation onAnimationComplete={handleSVGAnimationComplete} />
             ) : (
                 <main>
-                    <Navbar/>
-                    <HeroSection ref={heroRef} isActive={activeSection === 'hero'}/>
-                    <AboutSection ref={aboutRef} isActive={activeSection === 'about'}/>
-                    <ExpSection ref={expRef} isActive={activeSection === 'experience'}/>
+                    <Navbar onNavigation={handleNavigation} />
+                    <HeroSection ref={heroRef} isActive={activeSection === 'hero'} />
+                    <AboutSection ref={aboutRef} isActive={activeSection === 'about'} />
+                    <ExpSection ref={expRef} isActive={activeSection === 'experience'} />
                 </main>
             )}
         </div>

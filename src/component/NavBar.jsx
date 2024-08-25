@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import logoSvg from '../assets/logo.svg';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({onNavigation}) => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollPos, setLastScrollPos] = useState(0);
 
@@ -71,7 +72,8 @@ const Navbar = () => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <a href="#" className=" text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">
+                                <a href="#" className=" text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                    onClick={()=>onNavigation('about')}>
                                     About
                                 </a>
                             </motion.div>
@@ -80,7 +82,8 @@ const Navbar = () => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <a href="#" className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">
+                                <a href="#" className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                    onClick={()=>onNavigation('experience')}>
                                     Experience
                                 </a>
                             </motion.div>
@@ -111,6 +114,10 @@ const Navbar = () => {
         </header>
     );
 };
+
+Navbar.PropTypes = {
+    onNavigation : PropTypes.func.isRequired
+}
 
 export default Navbar;
 

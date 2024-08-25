@@ -19,6 +19,10 @@ const AboutSection = React.forwardRef(({ isActive }, ref) => {
         }
     }, [isActive, hasAnimated, controls])
 
+    useEffect(() => {
+        console.log(ref.current); // This should now log the section DOM element after mounting
+    }, [ref]);
+
     return (
         <section className=" about  max-w-about-max flex items-start
                  mx-auto my-0"
