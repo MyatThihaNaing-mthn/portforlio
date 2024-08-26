@@ -10,17 +10,9 @@ export default function HeroAnimation({onAnimationComplete}){
         hidden: { opacity: 0, pathLength: 0 },
         visible: { opacity: 1, pathLength: 1, transition: { duration: 1 } }
     }
-    const textVariants = {
-        hidden: { rotate: -360, opacity: 0 },
-        visible: {
-            rotate: 0,
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 1,
-                delay: 1
-            }
-        }
+    const mPathVariants = {
+        hidden: { opacity: 0, pathLength: 0 },
+        visible: { opacity: 1, pathLength: 1, transition: { duration: 1, delay: 1 } }
     }
     return(
         <div className=" w-full h-screen flex items-center justify-center">
@@ -38,22 +30,17 @@ export default function HeroAnimation({onAnimationComplete}){
                         fill="none"
                         stroke="#64ffda"
                         strokeWidth="4"
-                        d="M 50 10 L 78 30 L 78 70 L 50 90 L 22 70 L 22 30 Z"
+                        strokeLinecap="round"
+                        d="M 50 10 L 80 30 L 80 70 L 50 90 L 20 70 L 20 30 Z"
                         variants={pathVariants}
                     />
-                    <motion.text
-                        x="50%"
-                        y="50%"
-                        variants={textVariants}
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                        fontSize="28"
-                        fontWeight="bold"
-                        fill="#64ffda"
-                        fontFamily="Arial"
-                    >
-                        M
-                    </motion.text>
+                    <motion.path
+                        fill="none" 
+                        stroke="white" 
+                        stroke-width="4"
+                        variants={mPathVariants}
+                        d="M 35 65 L 35 35 L 50 50 L 65 35 L 65 65"
+                    />
                 </motion.svg>
         </div>
     )

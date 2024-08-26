@@ -34,7 +34,7 @@ export default function IntroPage() {
     return (
         <div className=" main flex flex-col items-center justify-center">
             {isSVGVisible ? (
-                <HeroAnimation onAnimationComplete={handleSVGAnimationComplete} />
+                <HeroAnimation  onAnimationComplete={handleSVGAnimationComplete} />
             ) : (
                 <main>
                     <Navbar/>

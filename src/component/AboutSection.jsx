@@ -32,14 +32,14 @@ const AboutSection = () => {
 
 
     return (
-        <section className=" about  max-w-about-max flex items-start
+        <section className=" about  max-w-about-max flex flex-col items-start
                  mx-auto my-0"
             ref={aboutRef}>
+            <h2 className=" section-heading text-lightest-slate">About Me</h2>
             <motion.div
                 variants={contentVariants}
                 initial="hidden"
                 animate={controls}>
-                <h2 className=" section-heading text-lightest-slate">About Me</h2>
                 <div className=" inner">
                     <div className=" about-me-txt block">
                         <div>
