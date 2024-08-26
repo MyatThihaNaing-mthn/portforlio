@@ -5,6 +5,9 @@ import HeroAnimation from "./HeroAnimation";
 import ExpSection from "./ExpSection";
 import Navbar from "./NavBar";
 import ProjectSection from "./ProjectSection";
+import LeftPanel from "./LeftPanel";
+import RightPanel from "./RightPanel";
+import ContactSection from "./ContactSection";
 
 
 export default function IntroPage() {
@@ -39,6 +42,9 @@ export default function IntroPage() {
                     <AboutSection/>
                     <ExpSection/>
                     <ProjectSection/>
+                    <ContactSection/>
+                    <LeftPanel/>
+                    <RightPanel/>
                 </main>
             )}
         </div>

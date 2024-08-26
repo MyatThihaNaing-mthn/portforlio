@@ -1,0 +1,56 @@
+{
+    "projects": [
+        {
+            "title": "Room Rental",
+            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "tech": [
+                "Spring boot",
+                "Reactjs",
+                "MySql",
+                "Redis",
+                "AWS-S3"
+            ],
+            "image": "src/assets/images/first.png",
+            "repo": "https://github.com/RoomRent-SG/"
+        },
+        {
+            "title": "Course Tracking App",
+            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "tech": [
+                "Spring boot",
+                "Reactjs",
+                "MySql",
+                "Redis",
+                "AWS-S3"
+            ],
+            "image": "src/assets/images/first.png",
+            "repo": "https://github.com/RoomRent-SG/"
+        },
+        {
+            "title": "WBGT tracking App",
+            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "tech": [
+                "Spring boot",
+                "Reactjs",
+                "MySql",
+                "Redis",
+                "AWS-S3"
+            ],
+            "image": "src/assets/images/first.png",
+            "repo": "https://github.com/RoomRent-SG/"
+        },
+        {
+            "title": "P2P Meeting(WebRTC)",
+            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "tech": [
+                "Spring boot",
+                "Reactjs",
+                "MySql",
+                "Redis",
+                "AWS-S3"
+            ],
+            "image": "src/assets/images/first.png",
+            "repo": "https://github.com/RoomRent-SG/"
+        }
+    ]
+}

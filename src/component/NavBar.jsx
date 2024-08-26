@@ -61,7 +61,7 @@ const Navbar = ({onNavigation}) => {
                             initial="hidden"
                             animate="visible"
                         >
-                            <img src={logoSvg} className=' w-10 h-12 sm:w-12 sm:h-16' />
+                            <img src={logoSvg} alt='logo' className=' w-10 h-12 sm:w-12 sm:h-16' />
                         </motion.div>
 
                     </div>
