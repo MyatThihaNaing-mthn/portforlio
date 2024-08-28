@@ -1,8 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-const HeroSection = () => {
+const HeroSection = forwardRef((props, ref)=> {
     const [hasAnimated, setHasAnimated] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [heroRef, heroInView] = useInView({
@@ -53,7 +53,12 @@ const HeroSection = () => {
     },[hasAnimated, isActive, controls])
    
     return (
-        <section ref={heroRef} className="hero min-h-screen h-screen max-w-section-max p-0 flex flex-col mx-auto my-0 items-start justify-center">
+        <section ref={(node) => {
+                heroRef(node)
+                if(typeof ref === 'function') ref(node)
+                else if(ref) ref.current = node
+            }} 
+                className="hero min-h-screen h-screen max-w-section-max p-0 flex flex-col mx-auto my-0 items-start justify-center">
             <motion.div
                 variants={h1Variants}
                 initial="hidden"
@@ -106,7 +111,7 @@ const HeroSection = () => {
 
         </section>
     );
-}
+})
 
 HeroSection.displayName = "HeroSection";
 

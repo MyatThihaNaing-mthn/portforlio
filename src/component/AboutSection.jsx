@@ -1,10 +1,10 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import profileImg from '../assets/me.png';
 // import PropTypes from 'prop-types';
 import { useInView } from "react-intersection-observer";
 
-const AboutSection = () => {
+const AboutSection = forwardRef((props, ref) => {
     const [hasAnimated, setHasAnimated] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [aboutRef, aboutInView] = useInView({
@@ -34,7 +34,14 @@ const AboutSection = () => {
     return (
         <section className=" about  max-w-about-max flex flex-col items-start
                  mx-auto my-0"
-            ref={aboutRef}>
+                 id="about"
+            ref={(node) => {
+                // Assign the ref from useInView
+                aboutRef(node);
+                // Assign the forwarded ref
+                if (typeof ref === 'function') ref(node);
+                else if (ref) ref.current = node;
+            }}>
             <h2 className=" section-heading text-lightest-slate">About Me</h2>
             <motion.div
                 variants={contentVariants}
@@ -79,7 +86,7 @@ const AboutSection = () => {
             </motion.div>
         </section>
     )
-}
+})
 
 AboutSection.displayName = "AboutSection"
 // AboutSection.propTypes = {

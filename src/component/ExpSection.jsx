@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import ExpData from "../assets/content/experience.json";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
-const ExpSection = () => {
+const ExpSection = forwardRef((props, ref) => {
     const [hasAnimated, setHasAnimated] = useState(false);
     const [expRef, expInView] = useInView({
         threshold : 0.5
@@ -42,7 +42,12 @@ const ExpSection = () => {
         <section
             className="experience max-w-about-max flex flex-col items-start
                  mx-auto my-0"
-            ref={expRef}
+                 id="experience"
+            ref={(node) => {
+                expRef(node)
+                if(typeof ref === 'function') ref(node);
+                else if(ref) ref.current = node
+            }}
         >
             <motion.div variants={contentVariants}
                 initial="hidden"
@@ -69,7 +74,7 @@ const ExpSection = () => {
         </section>
     )
 }
-
+)
 function TabButton({ company, isActive, handleClick }) {
     return (
         <button className={`tab-btn ${isActive ? 'active' : ''}`} onClick={handleClick}>

@@ -72,38 +72,40 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <a href="#" className=" text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                <p className=" text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
                                     onClick={()=>onNavigation('about')}>
                                     About
-                                </a>
+                                </p>
                             </motion.div>
                             <motion.div
                                 variants={expVariant}
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <a href="#" className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
                                     onClick={()=>onNavigation('experience')}>
                                     Experience
-                                </a>
+                                </p>
                             </motion.div>
                             <motion.div
                                 variants={workVariant}
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <a href="#" className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                    onClick={()=>onNavigation('project')}>
                                     Work
-                                </a>
+                                </p>
                             </motion.div>
                             <motion.div
                                 variants={contactVariant}
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <a href="#" className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                    onClick={()=> onNavigation('contact')}>
                                     Contact
-                                </a>
+                                </p>
                             </motion.div>
 
                         </div>

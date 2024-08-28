@@ -37,7 +37,7 @@ export default function HeroAnimation({onAnimationComplete}){
                     <motion.path
                         fill="none" 
                         stroke="white" 
-                        stroke-width="4"
+                        strokeWidth="4"
                         variants={mPathVariants}
                         d="M 35 65 L 35 35 L 50 50 L 65 35 L 65 65"
                     />

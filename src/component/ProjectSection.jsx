@@ -1,10 +1,10 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react"
+import { forwardRef, useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer";
 import ProjectData from '../assets/content/project.json';
 import PropTypes from 'prop-types';
 
-export default function ProjectSection() {
+const ProjectSection = forwardRef((props, ref)=> {
     const [isActive, setIsActive] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
     const [projectRef, projectInView] = useInView({
@@ -35,7 +35,11 @@ export default function ProjectSection() {
     return (
         <section className="project min-h-screen max-w-about-max flex flex-col items-start
                  mx-auto my-0"
-            ref={projectRef}>
+            ref={(node) => {
+                projectRef(node)
+                if(typeof ref === 'function') ref(node)
+                else if(ref) ref.current = node
+            }}>
             <h2 className=" section-heading text-lightest-slate">Some Things I&apos;ve Built</h2>
             <motion.div variants={contentVariants}
                         initial="hidden"
@@ -48,10 +52,10 @@ export default function ProjectSection() {
             </motion.div>
         </section>
     )
-}
+})
 
 function ProjectItem({project}) {
-    console.log(project)
+    
     return (
         <li className=" project-item">
             <div className=" project-content">
@@ -99,3 +103,6 @@ function ProjectItem({project}) {
 ProjectItem.propTypes = {
     project: PropTypes.object.isRequired
 }
+
+ProjectSection.displayName = "ProjectSection";
+export default ProjectSection
