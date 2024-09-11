@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import logoSvg from '../assets/logo.svg';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
+import { RiMenu4Fill } from "react-icons/ri";
+import Drawer from './Drawer';
 
 const Navbar = ({onNavigation}) => {
     const [isVisible, setIsVisible] = useState(true);
+    const [isMenuOpen, setMenuOpen] = useState(false);
     const [lastScrollPos, setLastScrollPos] = useState(0);
 
     const logoVariant = {
@@ -26,6 +29,10 @@ const Navbar = ({onNavigation}) => {
     const contactVariant = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { duration: 0.2, delay: 0.8 } }
+    }
+    const resumeVariant = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.2, delay: 1 } }
     }
 
     useEffect(() => {
@@ -65,6 +72,13 @@ const Navbar = ({onNavigation}) => {
                         </motion.div>
 
                     </div>
+                    <div className='block md:hidden'>
+                        <RiMenu4Fill
+                            size={32}
+                            onClick={()=>setMenuOpen(true)}
+                        />
+                    </div>
+                    <Drawer isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} onNavigation={onNavigation}/>
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                             <motion.div
@@ -72,7 +86,7 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className=" text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                <p className=" text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
                                     onClick={()=>onNavigation('about')}>
                                     About
                                 </p>
@@ -82,7 +96,7 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
                                     onClick={()=>onNavigation('experience')}>
                                     Experience
                                 </p>
@@ -92,7 +106,7 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
                                     onClick={()=>onNavigation('project')}>
                                     Work
                                 </p>
@@ -102,12 +116,22 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium"
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
                                     onClick={()=> onNavigation('contact')}>
                                     Contact
                                 </p>
                             </motion.div>
-
+                            <motion.div
+                                variants={resumeVariant}
+                                initial="hidden"
+                                animate="visible">
+                                <a className=' resume-button'
+                                    href='/src/assets/content/resume.pdf'
+                                    target='_blank'
+                                    rel='noopener noreferrer'>
+                                    Resume
+                                </a>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -122,4 +146,3 @@ Navbar.propTypes = {
 }
 
 export default Navbar;
-

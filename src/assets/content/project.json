@@ -10,7 +10,7 @@
                 "Redis",
                 "AWS-S3"
             ],
-            "image": "src/assets/images/first.png",
+            "image": "src/assets/images/roomrentss.png",
             "repo": "https://github.com/RoomRent-SG/"
         },
         {
@@ -18,12 +18,10 @@
             "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
             "tech": [
                 "Spring boot",
-                "Reactjs",
-                "MySql",
-                "Redis",
-                "AWS-S3"
+                "Thymeleaf",
+                "MySql"
             ],
-            "image": "src/assets/images/first.png",
+            "image": "src/assets/images/admin1.png",
             "repo": "https://github.com/RoomRent-SG/"
         },
         {

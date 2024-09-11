@@ -833,3 +833,65 @@ svg.feather {
   box-shadow: 4px 4px 0 0 var(--green);
   transform: translate(-5px, -5px);
 }
+
+/* Drawer Menu */
+.drawer {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  padding: 50px 10px;
+  width: min(75vw, 400px);
+  height: 100vh;
+  outline: 0px;
+  outline-color: initial;
+  outline-style: initial;
+  outline-width: 0px;
+  background-color: var(--light-navy);
+  box-shadow: -10px 0px 30px -15px var(--navy-shadow);
+  z-index: 35;
+  visibility: visible;
+}
+
+.drawer nav {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  color: var(--lightest-slate);
+  font-family: var(--font-mono);
+  text-align: center;
+}
+
+.drawer div {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  transition: var(--transition);
+  width: 100%;
+  padding: 3px 20px 20px;
+}
+
+.resume-button {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  transition: var(--transition);
+  margin-left: 15px;
+  font-size: var(--fz-xs);
+}

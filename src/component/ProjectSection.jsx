@@ -33,7 +33,7 @@ const ProjectSection = forwardRef((props, ref)=> {
     }, [isActive, hasAnimated, controls])
 
     return (
-        <section className="project min-h-screen max-w-about-max flex flex-col items-start
+        <section className="work min-h-screen max-w-about-max flex flex-col items-start
                  mx-auto my-0"
             ref={(node) => {
                 projectRef(node)

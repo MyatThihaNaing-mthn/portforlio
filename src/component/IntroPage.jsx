@@ -32,7 +32,7 @@ export default function IntroPage() {
                 console.log(expRef)
                 if(expRef && expRef.current) expRef.current.scrollIntoView({behavior: 'smooth'})
                 break
-            case 'project':
+            case 'work':
                 console.log(projectRef)
                 if(projectRef && projectRef.current) projectRef.current.scrollIntoView({behavior: 'smooth'})
                 break
