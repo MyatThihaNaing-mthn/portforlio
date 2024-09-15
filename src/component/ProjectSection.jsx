@@ -35,6 +35,7 @@ const ProjectSection = forwardRef((props, ref)=> {
     return (
         <section className="work min-h-screen max-w-about-max flex flex-col items-start
                  mx-auto my-0"
+            id="work"
             ref={(node) => {
                 projectRef(node)
                 if(typeof ref === 'function') ref(node)

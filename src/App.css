@@ -1,1 +1,8 @@
 
+@font-face {
+    font-family: 'Calibre';
+    src: url('/src/fonts/Calibre/Calibre-Regular.woff2') format('woff2'),
+         url('/src/fonts/Calibre/Calibre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }

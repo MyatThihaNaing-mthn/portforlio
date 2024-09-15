@@ -107,7 +107,7 @@ const Navbar = ({onNavigation}) => {
                                 animate="visible"
                             >
                                 <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
-                                    onClick={()=>onNavigation('project')}>
+                                    onClick={()=>onNavigation('work')}>
                                     Work
                                 </p>
                             </motion.div>
