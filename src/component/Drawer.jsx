@@ -62,7 +62,7 @@ export default function Drawer({ isMenuOpen, setMenuOpen, onNavigation }) {
                         </div>
                     ))}
                     <a className=' resume-button'
-                                    href='/src/assets/content/resume.pdf'
+                                    href='/resume.pdf'
                                     target='_blank'
                                     rel='noopener noreferrer'>
                                     Resume

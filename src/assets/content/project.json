@@ -10,7 +10,7 @@
                 "Redis",
                 "AWS-S3"
             ],
-            "image": "src/assets/images/roomrentss.png",
+            "image": "/roomrentss.png",
             "repo": "https://github.com/RoomRent-SG/room-rental-service-sg"
         },
         {
@@ -21,7 +21,7 @@
                 "Thymeleaf",
                 "MySql"
             ],
-            "image": "src/assets/images/admin1.png",
+            "image": "/admin1.png",
             "repo": "https://github.com/MyatThihaNaing-mthn/Course-Management"
         },
         {
@@ -33,7 +33,7 @@
                 "Firebase",
                 "Python"
             ],
-            "image": "src/assets/images/wbgt.png",
+            "image": "/wbgt.png",
             "repo": "https://github.com/CrystalWYT17/AdProject_Android_WBGT"
         },
         {
@@ -45,7 +45,7 @@
                 "Jodit React",
                 "Firebase"
             ],
-            "image": "src/assets/images/blog.png",
+            "image": "/blog.png",
             "repo": "https://github.com/MyatThihaNaing-mthn/personal_blog"
         }
     ]

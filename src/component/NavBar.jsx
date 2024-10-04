@@ -62,7 +62,8 @@ const Navbar = ({onNavigation}) => {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 cursor-pointer"
+                        onClick={()=>onNavigation("logo")}>
                         <motion.div
                             variants={logoVariant}
                             initial="hidden"
@@ -86,7 +87,7 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className=" text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
+                                <p className=" text-white hover:text-green px-3 py-2 rounded-md cursor-pointer font-medium"
                                     onClick={()=>onNavigation('about')}>
                                     About
                                 </p>
@@ -96,7 +97,7 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md cursor-pointer font-medium"
                                     onClick={()=>onNavigation('experience')}>
                                     Experience
                                 </p>
@@ -106,7 +107,7 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md cursor-pointer font-medium"
                                     onClick={()=>onNavigation('work')}>
                                     Work
                                 </p>
@@ -116,7 +117,7 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <p className="text-white hover:text-green px-3 py-2 rounded-md text-sm cursor-pointer font-medium"
+                                <p className="text-white hover:text-green px-3 py-2 rounded-md cursor-pointer font-medium"
                                     onClick={()=> onNavigation('contact')}>
                                     Contact
                                 </p>
@@ -126,10 +127,10 @@ const Navbar = ({onNavigation}) => {
                                 initial="hidden"
                                 animate="visible">
                                 <a className=' resume-button'
-                                    href='/src/assets/content/resume.pdf'
+                                    href='/resume.pdf'
                                     target='_blank'
                                     rel='noopener noreferrer'>
-                                    Resume
+                                    <p>Resume</p>
                                 </a>
                             </motion.div>
                         </div>

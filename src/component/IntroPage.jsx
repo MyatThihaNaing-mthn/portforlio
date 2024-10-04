@@ -13,7 +13,7 @@ import Footer from "./Footer";
 
 export default function IntroPage() {
     const [isSVGVisible, setSVGVisible] = useState(true)
-    console.log('re rendered')
+
     const heroRef = useRef(null);
     const aboutRef = useRef(null);
     const expRef = useRef(null);
@@ -23,25 +23,23 @@ export default function IntroPage() {
     const navigationHandler = (section) => {
         switch(section){
             case 'hero':
-                console.log(heroRef)
                 break
             case 'about':
-                console.log(aboutRef)
                 if(aboutRef && aboutRef.current) aboutRef.current.scrollIntoView({behavior: 'smooth'})
                 break
             case 'experience':
-                console.log(expRef)
                 if(expRef && expRef.current) expRef.current.scrollIntoView({behavior: 'smooth'})
                 break
             case 'work':
-                console.log(projectRef)
                 if(projectRef && projectRef.current) projectRef.current.scrollIntoView({behavior: 'smooth'})
                 break
             case 'contact':
                 if(contactRef && contactRef.current) contactRef.current.scrollIntoView({behavior: 'smooth'})
                 break
+            case 'logo':
+                window.location.reload()
+                break
             default :
-                console.log('default')
 
         }
     }
