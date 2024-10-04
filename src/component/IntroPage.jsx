@@ -8,6 +8,7 @@ import ProjectSection from "./ProjectSection";
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
 import ContactSection from "./ContactSection";
+import Footer from "./Footer";
 
 
 export default function IntroPage() {
@@ -76,6 +77,7 @@ export default function IntroPage() {
                     <ExpSection ref={expRef}/>
                     <ProjectSection ref={projectRef}/>
                     <ContactSection ref={contactRef}/>
+                    <Footer/>
                     <LeftPanel/>
                     <RightPanel/>
                 </main>

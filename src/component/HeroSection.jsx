@@ -102,7 +102,7 @@ const HeroSection = forwardRef((props, ref)=> {
                 initial="hidden"
                 animate={controls}>
                 <div>
-                    <p className=" mt-5 mb-5 ml-1 text-sm md:text-base text-slate leading-p-line-height
+                    <p className=" mt-5 mb-5 ml-1 md:text-base text-slate leading-p-line-height
                             max-w-p-width">
                         I am a passionate software engineer, deeply committed to designing and implementing digital solutions that address real-world challenges with creativity and precision.
                     </p>

@@ -2,7 +2,7 @@
     "projects": [
         {
             "title": "Room Rental",
-            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced search feature.",
             "tech": [
                 "Spring boot",
                 "Reactjs",
@@ -11,11 +11,11 @@
                 "AWS-S3"
             ],
             "image": "src/assets/images/roomrentss.png",
-            "repo": "https://github.com/RoomRent-SG/"
+            "repo": "https://github.com/RoomRent-SG/room-rental-service-sg"
         },
         {
             "title": "Course Tracking App",
-            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "description": "A course management app where students can register the courses, teachers can grade the students and admins can manage all the related stuffs.",
             "tech": [
                 "Spring boot",
                 "Thymeleaf",
@@ -26,29 +26,27 @@
         },
         {
             "title": "WBGT tracking App",
-            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "description": "An android application that users can check the current and predicted wet bulb globe temperature and alert the users of the risk of heat stroke if the current WBGT is high.",
             "tech": [
-                "Spring boot",
-                "Reactjs",
-                "MySql",
-                "Redis",
-                "AWS-S3"
+                "Android",
+                "Java",
+                "Firebase",
+                "Python"
             ],
-            "image": "src/assets/images/first.png",
+            "image": "src/assets/images/wbgt.png",
             "repo": "https://github.com/CrystalWYT17/AdProject_Android_WBGT"
         },
         {
-            "title": "P2P Meeting(WebRTC)",
-            "description": "A website where user can register and post room advertisements for rent. It was built for people who want to look for the rooms they want more effectively by filtering with advanced searched feature.",
+            "title": "Personal Blog App",
+            "description": "A website where I can write and document the things I've learned",
             "tech": [
-                "Spring boot",
                 "Reactjs",
-                "MySql",
-                "Redis",
-                "AWS-S3"
+                "Tailwind",
+                "Jodit React",
+                "Firebase"
             ],
-            "image": "src/assets/images/first.png",
-            "repo": "https://github.com/RoomRent-SG/"
+            "image": "src/assets/images/blog.png",
+            "repo": "https://github.com/MyatThihaNaing-mthn/personal_blog"
         }
     ]
 }
