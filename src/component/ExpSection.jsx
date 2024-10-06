@@ -54,7 +54,7 @@ const ExpSection = forwardRef((props, ref) => {
                 animate={controls}>
                 <h2 className=" section-heading text-lightest-slate">Experience</h2>
                 <div className=" inner">
-                    <div className=" tab-list">
+                    <div className=" tab-list pr-5">
                         {data && data.map(
                             (exp, index) => {
                                 return <TabButton

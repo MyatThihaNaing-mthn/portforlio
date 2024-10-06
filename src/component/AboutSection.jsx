@@ -8,7 +8,7 @@ const AboutSection = forwardRef((props, ref) => {
     const [hasAnimated, setHasAnimated] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [aboutRef, aboutInView] = useInView({
-        threshold: 0.5
+        threshold: 0.2
     });
 
     const controls = useAnimation();

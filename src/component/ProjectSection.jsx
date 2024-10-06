@@ -8,7 +8,7 @@ const ProjectSection = forwardRef((props, ref)=> {
     const [isActive, setIsActive] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
     const [projectRef, projectInView] = useInView({
-        threshold: 0.2
+        threshold: 0.1
     })
 
     const projects = ProjectData.projects;
@@ -90,8 +90,8 @@ function ProjectItem({project}) {
             <div className=" project-image">
                 <a href={project.repo} target="_blank">
                     <div className="img-wrapper img image-wrapper-constrained">
-                        <div className=" block max-w-img-max">
-                            <img className=" img" style={{maxWidth: '100%', display: 'block', position: 'static'}} src={project.image} />
+                        <div className=" block max-w-img-max h-4/5 max-h-[80%]">
+                            <img className=" img" style={{maxWidth: '100%', height: '100%', display: 'block', position: 'static'}} src={project.image} />
                         </div>
                         <img aria-hidden={true} className=" second-img" src={project.image}></img>
                     </div>
@@ -100,7 +100,7 @@ function ProjectItem({project}) {
         </li>
     )
 }
-
+// max-h-[350px] h-[350px]
 ProjectItem.propTypes = {
     project: PropTypes.object.isRequired
 }
